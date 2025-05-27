@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Details - Kotecha Family</title>
+    <link rel="stylesheet" href="style.css"> <!-- Using existing style for now -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #password-section-family {
+            text-align: center;
+            padding: 30px;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        #password-section-family h2 {
+            margin-top: 0;
+            color: #495057;
+        }
+        #password-section-family input[type="password"] {
+            padding: 10px;
+            margin: 10px 5px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        #password-section-family button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        #password-section-family button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #dc3545;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        #family-main-content {
+            /* display: none; */ /* Will be controlled by JS */
+        }
+        .next-birthday-section {
+            background-color: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .next-birthday-section h3 {
+            margin-top: 0;
+            color: #005c99;
+        }
+        .birthday-table-controls {
+            margin-bottom: 15px;
+            text-align: right;
+        }
+        .birthday-table-controls button {
+            padding: 8px 15px;
+            margin-left: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .birthday-table-controls button:hover {
+            background-color: #218838;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8f9fa;
+            cursor: pointer; /* Indicate sortable columns */
+        }
+        th:hover {
+            background-color: #e9ecef;
+        }
+        .back-link-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-link:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="password-section-family">
+            <h2>Family Details Access</h2>
+            <input type="password" id="family-password-input" placeholder="Enter Password">
+            <button onclick="checkFamilyPassword()">Enter</button>
+            <p id="family-password-error" class="error-message"></p>
+        </div>
+
+        <div id="family-main-content" style="display:none;">
+            <h1>Family Details</h1>
+            <p id="current-date-display" style="text-align: center; font-size: 1.1em; color: #555; margin-bottom: 20px;"></p>
+            
+            <div class="next-birthday-section">
+                <h3>Next Upcoming Birthday(s)</h3>
+                <p id="next-birthday-info">Calculating...</p>
+            </div>
+
+            <h2>Birthday List</h2>
+            <div class="birthday-table-controls">
+                Sort by:
+                <button id="sort-by-name">Name</button>
+                <button id="sort-by-date">Date (Chronological)</button>
+                <button id="sort-by-days-until">Days Until (Upcoming)</button>
+            </div>
+            <table id="birthday-table">
+                <thead>
+                    <tr>
+                        <th data-sort-key="name">Name</th>
+                        <th data-sort-key="birthDate">Birthday (Day/Month)</th>
+                        <th data-sort-key="daysUntil">Days Until (Approx.)</th>
+                    </tr>
+                </thead>
+                <tbody id="birthday-table-body">
+                    <!-- Rows will be inserted by JavaScript -->
+                </tbody>
+            </table>
+            
+            <div class="back-link-container">
+                <a href="index.html" class="back-link">Back to Main Landing Page</a>
+            </div>
+        </div>
+    </div>
+    <script src="family_script.js"></script>
+</body>
+</html>
