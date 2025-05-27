@@ -78,10 +78,18 @@ function startGame() {
 
 function resetAndStartGame() {
     gameOverSection.style.display = 'none';
-    playerNameSection.style.display = 'block'; // Go back to name input
-    playerNameInput.value = ""; // Clear previous name
-    gameContent.style.display = 'none';
-    // Reset other necessary states if any
+    gameContent.style.display = 'none'; // Hide game content first
+
+    if (currentPlayerName) { // If a name is already stored
+        playerNameSection.style.display = 'none';
+        gameContent.style.display = 'block'; // Ensure game content is shown
+        displayPlayerName.textContent = currentPlayerName;
+        startGame();
+    } else {
+        // No name stored, show name input section
+        playerNameSection.style.display = 'block';
+        playerNameInput.value = "";
+    }
 }
 
 

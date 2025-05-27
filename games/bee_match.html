@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bee-Flower Color Match!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="bee_match.css">   <!-- Bee Match specific styles -->
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Bee-Flower Color Match!</h1>
+        </header>
+
+        <div id="player-name-section-bm">
+            <h2>Enter Your Name, Bee Buddy!</h2>
+            <input type="text" id="player-name-input-bm" placeholder="Your Name">
+            <button id="start-game-button-bm">Start Matching!</button>
+            <p id="name-error-bm" class="error-message"></p>
+        </div>
+
+        <div id="game-content-bm" style="display:none;">
+            <div id="game-info-bm">
+                <p>Player: <span id="display-player-name-bm"></span></p>
+                <p>Score: <span id="score-bm">0</span></p>
+                <p>Round: <span id="round-number-bm">1</span>/10</p>
+            </div>
+
+            <canvas id="game-canvas-bm" width="600" height="450"></canvas>
+            <p id="instructions-bm">A colored bee will appear. Click the flower of the matching color!</p>
+            <p id="feedback-message-bm" style="min-height: 20px; font-weight: bold;"></p>
+        </div>
+
+        <div id="game-over-section-bm" style="display:none;">
+            <h2>Game Over!</h2>
+            <p>Great matching, <span id="final-player-name-bm"></span>!</p>
+            <p>Your final score is: <span id="final-score-bm"></span></p>
+            <button id="play-again-button-bm">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list-bm">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="bee_match.js"></script>
+</body>
+</html>

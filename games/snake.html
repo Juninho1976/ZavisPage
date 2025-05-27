@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> <!-- Added user-scalable=no for better touch experience -->
     <title>Classic Snake!</title>
     <link rel="stylesheet" href="../style.css"> <!-- Link to main styles -->
     <link rel="stylesheet" href="snake.css">    <!-- Link to snake specific styles -->
@@ -27,7 +27,16 @@
             </div>
 
             <canvas id="game-board" width="400" height="400"></canvas>
-            <p id="instructions-snake">Use Arrow Keys to move the snake. Eat the food to grow!</p>
+            <p id="instructions-snake">Use Arrow Keys or On-Screen Buttons to move the snake. Eat the food to grow!</p>
+            
+            <div id="on-screen-controls">
+                <button id="btn-up" class="control-button">▲</button>
+                <div>
+                    <button id="btn-left" class="control-button">◄</button>
+                    <button id="btn-down" class="control-button">▼</button>
+                    <button id="btn-right" class="control-button">►</button>
+                </div>
+            </div>
         </div>
 
         <div id="game-over-section-snake" style="display:none;">

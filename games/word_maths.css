@@ -1,0 +1,166 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #f0e68c; /* Khaki, a studious color */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #fff8dc; /* Cornsilk */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 750px; /* Wider for word problems */
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #8b4513; /* SaddleBrown */
+}
+
+#player-name-section-wm input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #cd853f; /* Peru */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section-wm button,
+#game-over-section-wm button,
+.button-link {
+    background-color: #cd853f; /* Peru */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+#player-name-section-wm button:hover,
+#game-over-section-wm button:hover,
+.button-link:hover {
+    background-color: #a0522d; /* Sienna */
+}
+
+#game-info-wm {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f5deb3; /* Wheat */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #800000; /* Maroon */
+}
+
+#question-area-wm {
+    background-color: #faf0e6; /* Linen */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: left; /* Better for reading word problems */
+}
+
+#question-text-wm {
+    font-size: 1.3em; /* Good size for readability */
+    color: #556b2f; /* DarkOliveGreen */
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+#answer-options-wm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#answer-options-wm button {
+    background-color: #ffe4b5; /* Moccasin */
+    color: #8b4513; /* SaddleBrown */
+    padding: 15px;
+    border: 2px solid #deb887; /* BurlyWood */
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#answer-options-wm button:hover {
+    background-color: #ffdab9; /* PeachPuff */
+    transform: translateY(-2px);
+}
+
+#answer-options-wm button.correct {
+    background-color: #9acd32 !important; /* YellowGreen */
+    color: #f5f5f5 !important; /* WhiteSmoke text */
+    border-color: #6b8e23 !important; /* OliveDrab */
+}
+
+#answer-options-wm button.incorrect {
+    background-color: #f08080 !important; /* LightCoral */
+    color: #fffafa !important; /* Snow text */
+    border-color: #cd5c5c !important; /* IndianRed */
+}
+
+#answer-options-wm button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#feedback-message-wm {
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 20px;
+    text-align: center; /* Center feedback message */
+}
+
+#game-over-section-wm h3 {
+    color: #d2691e; /* Chocolate */
+    margin-top: 25px;
+    border-bottom: 2px dashed #e9967a; /* DarkSalmon */
+    padding-bottom: 5px;
+}
+
+#high-scores-list-wm {
+    list-style-type: decimal;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 350px;
+    margin: 15px auto;
+}
+
+#high-scores-list-wm li {
+    background-color: #fffaf0; /* FloralWhite */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #b8860b; /* DarkGoldenRod */
+    font-size: 1.05em;
+}
+
+#high-scores-list-wm li strong {
+    color: #800000; /* Maroon */
+}
+
+.error-message {
+    color: #dc143c;
+    font-weight: bold;
+    margin-top: 8px;
+}

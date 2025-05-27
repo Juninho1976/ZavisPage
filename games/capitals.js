@@ -135,9 +135,17 @@ function startQuiz() {
 
 function resetAndStartGameCapitals() {
     gameOverSectionCapitals.style.display = 'none';
-    playerNameSectionCapitals.style.display = 'block';
-    playerNameInputCapitals.value = "";
     gameContentCapitals.style.display = 'none';
+
+    if (currentPlayerNameCapitals) {
+        playerNameSectionCapitals.style.display = 'none';
+        gameContentCapitals.style.display = 'block'; // Ensure game content is shown
+        displayPlayerNameCapitals.textContent = currentPlayerNameCapitals;
+        startQuiz();
+    } else {
+        playerNameSectionCapitals.style.display = 'block';
+        playerNameInputCapitals.value = "";
+    }
 }
 
 function generateQuizQuestions() {

@@ -2,7 +2,9 @@ const CORRECT_PASSWORD = "ZaviTDJS";
 let votes = {
     multiplicationMadness: { up: 0, down: 0 },
     classicSnake: { up: 0, down: 0 },
-    capitalsQuiz: { up: 0, down: 0 }
+    capitalsQuiz: { up: 0, down: 0 },
+    wordMaths: { up: 0, down: 0 },
+    beeMatch: { up: 0, down: 0 }
 };
 let userGameVotes = {}; // To track user's vote for each game { gameId: 'up'/'down'/null }
 let comments = [];

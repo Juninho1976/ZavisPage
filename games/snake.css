@@ -68,8 +68,12 @@ body {
 #game-board {
     border: 5px solid #006400; /* DarkGreen */
     background-color: #000; /* Black game board */
-    margin: 0 auto 15px auto; /* Center the canvas */
+    margin: 0 auto 10px auto; /* Center the canvas, reduced bottom margin */
     display: block;
+    width: 90%; /* Make width responsive */
+    max-width: 400px; /* Max size for larger screens */
+    aspect-ratio: 1 / 1; /* Maintain square shape */
+    touch-action: none; /* Prevent scrolling/zooming on canvas touch */
 }
 
 #instructions-snake {
@@ -77,6 +81,63 @@ body {
     color: #556b2f;
     margin-bottom: 15px;
 }
+
+#on-screen-controls {
+    margin-top: 10px; /* Reduced top margin */
+    text-align: center;
+}
+
+#on-screen-controls div {
+    margin-top: 3px; /* Reduced margin */
+}
+
+.control-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 15px; /* Slightly reduced padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px; /* Slightly reduced font size */
+    margin: 2px 1px; /* Reduced margin */
+    cursor: pointer;
+    border-radius: 6px; /* Slightly smaller radius */
+    min-width: 50px;
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.control-button:hover {
+    background-color: #45a049; /* Darker Green */
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 480px) {
+    #game-board {
+        width: 95%; /* Take more width on small screens */
+        margin-bottom: 5px;
+    }
+    .control-button {
+        padding: 8px 12px;
+        font-size: 16px;
+        min-width: 45px;
+    }
+    #instructions-snake {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+    #game-container {
+        padding: 10px; /* Reduce padding on main container for small screens */
+    }
+     #game-info-snake {
+        font-size: 0.9em;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+}
+
 
 #game-over-section-snake h3 {
     color: #2e8b57; /* SeaGreen */

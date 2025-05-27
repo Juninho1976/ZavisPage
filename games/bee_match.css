@@ -1,0 +1,122 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #c1ffc1; /* PaleGreen, like a meadow */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #fff8dc; /* Cornsilk, light and airy */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 700px; /* Accommodate canvas */
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #ff69b4; /* HotPink, for a playful touch */
+}
+
+#player-name-section-bm input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ffb6c1; /* LightPink */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section-bm button,
+#game-over-section-bm button,
+.button-link {
+    background-color: #ffb6c1; /* LightPink */
+    color: #8b0000; /* DarkRed text for contrast */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+#player-name-section-bm button:hover,
+#game-over-section-bm button:hover,
+.button-link:hover {
+    background-color: #ffc0cb; /* Pink, slightly different shade */
+}
+
+#game-info-bm {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffe4e1; /* MistyRose */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #800080; /* Purple */
+}
+
+#game-canvas-bm {
+    border: 3px solid #90ee90; /* LightGreen border */
+    background-color: #f0fff0; /* Honeydew, light background for canvas */
+    margin: 0 auto 10px auto;
+    display: block;
+    cursor: pointer; /* Indicate it's interactive */
+}
+
+#instructions-bm {
+    font-size: 0.9em;
+    color: #556b2f; /* DarkOliveGreen */
+    margin-bottom: 10px;
+}
+
+#feedback-message-bm.correct {
+    color: green;
+}
+#feedback-message-bm.incorrect {
+    color: red;
+}
+
+
+#game-over-section-bm h3 {
+    color: #da70d6; /* Orchid */
+    margin-top: 25px;
+    border-bottom: 2px dashed #dda0dd; /* Plum */
+    padding-bottom: 5px;
+}
+
+#high-scores-list-bm {
+    list-style-type: decimal;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+#high-scores-list-bm li {
+    background-color: #f5f5f5; /* WhiteSmoke */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #ba55d3; /* MediumOrchid */
+    font-size: 1.05em;
+}
+
+#high-scores-list-bm li strong {
+    color: #8b008b; /* DarkMagenta */
+}
+
+.error-message {
+    color: #dc143c;
+    font-weight: bold;
+    margin-top: 8px;
+}

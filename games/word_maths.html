@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Maths Challenge!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="word_maths.css">   <!-- Word Maths specific styles -->
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Word Maths Challenge!</h1>
+        </header>
+
+        <div id="player-name-section-wm">
+            <h2>Enter Your Name, Math Detective!</h2>
+            <input type="text" id="player-name-input-wm" placeholder="Your Name">
+            <button id="start-game-button-wm">Start Challenge</button>
+            <p id="name-error-wm" class="error-message"></p>
+        </div>
+
+        <div id="game-content-wm" style="display:none;">
+            <div id="game-info-wm">
+                <p>Player: <span id="display-player-name-wm"></span></p>
+                <p>Score: <span id="score-wm">0</span></p>
+                <p>Round: <span id="round-number-wm">1</span>/5</p>
+                <p>Time Left: <span id="timer-wm">30</span>s</p> <!-- More time for reading word problems -->
+            </div>
+
+            <div id="question-area-wm">
+                <p id="question-text-wm"></p> <!-- Word problem will be displayed here -->
+                <div id="answer-options-wm">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+                <p id="feedback-message-wm"></p>
+            </div>
+        </div>
+
+        <div id="game-over-section-wm" style="display:none;">
+            <h2>Challenge Over!</h2>
+            <p>Fantastic job, <span id="final-player-name-wm"></span>!</p>
+            <p>Your final score is: <span id="final-score-wm"></span></p>
+            <button id="play-again-button-wm">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list-wm">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="word_maths.js"></script>
+</body>
+</html>

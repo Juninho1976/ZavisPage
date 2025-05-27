@@ -6,12 +6,16 @@ const adminMainContent = document.getElementById('admin-main-content');
 
 const mmHighScoresListAdmin = document.getElementById('mm-high-scores-list-admin');
 const csHighScoresListAdmin = document.getElementById('cs-high-scores-list-admin');
-const capitalsHighScoresListAdmin = document.getElementById('capitals-high-scores-list-admin'); // Added for capitals
+const capitalsHighScoresListAdmin = document.getElementById('capitals-high-scores-list-admin');
+const wmHighScoresListAdmin = document.getElementById('wm-high-scores-list-admin');
+const bmHighScoresListAdmin = document.getElementById('bm-high-scores-list-admin'); // Added for Bee Match
 const commentsListAdmin = document.getElementById('comments-list-admin');
 
 const MULTIPLICATION_MADNESS_STORAGE_KEY = 'multiplicationMadnessHighScores';
 const CLASSIC_SNAKE_STORAGE_KEY = 'classicSnakeHighScores';
-const CAPITALS_QUIZ_STORAGE_KEY = 'capitalsQuizHighScores'; // Added for capitals
+const CAPITALS_QUIZ_STORAGE_KEY = 'capitalsQuizHighScores';
+const WORD_MATHS_STORAGE_KEY = 'wordMathsHighScores';
+const BEE_MATCH_STORAGE_KEY = 'beeMatchHighScores'; // Added for Bee Match
 const COMMENTS_STORAGE_KEY = 'gameComments';
 
 // Check if already authenticated in this session
@@ -39,7 +43,9 @@ function showAdminContent() {
 function loadAllHighScores() {
     loadHighScoresForGame(MULTIPLICATION_MADNESS_STORAGE_KEY, mmHighScoresListAdmin, "Multiplication Madness");
     loadHighScoresForGame(CLASSIC_SNAKE_STORAGE_KEY, csHighScoresListAdmin, "Classic Snake");
-    loadHighScoresForGame(CAPITALS_QUIZ_STORAGE_KEY, capitalsHighScoresListAdmin, "Capitals Quiz"); // Added for capitals
+    loadHighScoresForGame(CAPITALS_QUIZ_STORAGE_KEY, capitalsHighScoresListAdmin, "Capitals Quiz");
+    loadHighScoresForGame(WORD_MATHS_STORAGE_KEY, wmHighScoresListAdmin, "Word Maths Challenge");
+    loadHighScoresForGame(BEE_MATCH_STORAGE_KEY, bmHighScoresListAdmin, "Bee-Flower Color Match"); // Added for Bee Match
     loadCommentsAdmin();
 }
 

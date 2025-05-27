@@ -1,0 +1,116 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #add8e6; /* LightBlue, like a sky */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #f0f8ff; /* AliceBlue */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 700px; /* Accommodate canvas */
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #ff4500; /* OrangeRed, for a sporty feel */
+}
+
+#player-name-section-bb input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff8c00; /* DarkOrange */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section-bb button,
+#game-over-section-bb button,
+#shoot-button-bb, /* Style the shoot button similarly */
+.button-link {
+    background-color: #ff8c00; /* DarkOrange */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+#player-name-section-bb button:hover,
+#game-over-section-bb button:hover,
+#shoot-button-bb:hover,
+.button-link:hover {
+    background-color: #cc7000; /* Darker Orange */
+}
+
+#game-info-bb {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffe4c4; /* Bisque */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #8b4513; /* SaddleBrown */
+}
+
+#basketball-court {
+    border: 5px solid #8b4513; /* SaddleBrown, like a wooden court border */
+    background-color: #deb887; /* BurlyWood, for the court color */
+    margin: 0 auto 10px auto;
+    display: block;
+    cursor: pointer; /* Indicate it's interactive */
+}
+
+#instructions-bb {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+#game-over-section-bb h3 {
+    color: #b22222; /* Firebrick */
+    margin-top: 25px;
+    border-bottom: 2px dashed #ff7f50; /* Coral */
+    padding-bottom: 5px;
+}
+
+#high-scores-list-bb {
+    list-style-type: decimal;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+#high-scores-list-bb li {
+    background-color: #fff5ee; /* SeaShell */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #d2691e; /* Chocolate */
+    font-size: 1.05em;
+}
+
+#high-scores-list-bb li strong {
+    color: #a0522d; /* Sienna */
+}
+
+.error-message {
+    color: #dc143c;
+    font-weight: bold;
+    margin-top: 8px;
+}

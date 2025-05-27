@@ -15,11 +15,12 @@ const gameBoard = document.getElementById('game-board');
 const ctx = gameBoard.getContext('2d');
 
 // Game Constants
-const GRID_SIZE = 20; // Size of each snake segment and food item in pixels
-const CANVAS_WIDTH = gameBoard.width;
-const CANVAS_HEIGHT = gameBoard.height;
-const TILE_COUNT_X = CANVAS_WIDTH / GRID_SIZE;
-const TILE_COUNT_Y = CANVAS_HEIGHT / GRID_SIZE;
+let GRID_SIZE = 20; // Will be calculated
+let CANVAS_WIDTH = gameBoard.width; // Initial, will be updated
+let CANVAS_HEIGHT = gameBoard.height; // Initial, will be updated
+const BASE_TILE_COUNT = 20; // We aim for a 20x20 grid conceptually
+let TILE_COUNT_X = BASE_TILE_COUNT;
+let TILE_COUNT_Y = BASE_TILE_COUNT;
 const INITIAL_SNAKE_LENGTH = 3;
 const GAME_SPEED = 150; // Milliseconds, lower is faster
 
@@ -47,6 +48,20 @@ playerNameInputSnake.addEventListener('keypress', function(event) {
 });
 document.addEventListener('keydown', changeDirection);
 
+// On-screen control listeners
+document.getElementById('btn-up').addEventListener('click', () => simulateKeyPress('ArrowUp'));
+document.getElementById('btn-left').addEventListener('click', () => simulateKeyPress('ArrowLeft'));
+document.getElementById('btn-down').addEventListener('click', () => simulateKeyPress('ArrowDown'));
+document.getElementById('btn-right').addEventListener('click', () => simulateKeyPress('ArrowRight'));
+
+function simulateKeyPress(key) {
+    // Create a new KeyboardEvent (or a simple object if preferred for this use case)
+    // and dispatch it or directly call changeDirection.
+    // Direct call is simpler here.
+    changeDirection({ key: key, preventDefault: () => {} }); // Mock event object
+}
+
+
 function isNameValidSnake(name) {
     if (!name.trim()) {
         nameErrorSnake.textContent = "Please enter a name!";
@@ -71,21 +86,64 @@ function handleStartGameSnake() {
         gameContentSnake.style.display = 'block';
         gameOverSectionSnake.style.display = 'none';
         displayPlayerNameSnake.textContent = currentPlayerNameSnake;
-        initGame();
+        initGame(); // Changed from initGame to initGame
     }
 }
 
-function initGame() {
+function updateCanvasDimensions() {
+    // Get the actual displayed size of the canvas from its parent or CSS
+    const style = window.getComputedStyle(gameBoard);
+    let newWidth = parseInt(style.width);
+    let newHeight = parseInt(style.height);
+
+    // Fallback if computed style is 0 (e.g. display:none initially)
+    // This might happen if called before the game content is visible.
+    // We'll rely on the CSS max-width and aspect-ratio to guide the initial size.
+    // A more robust way might be to get parent container width.
+    // For now, if newWidth is 0, we can't do much. Let's assume CSS gives it a size.
+    // The key is that GRID_SIZE must be > 0.
+
+    if (newWidth === 0 || newHeight === 0) {
+        // Attempt to use the canvas attribute size as a fallback if CSS size is 0
+        // This could happen if the element is hidden and then shown.
+        // The CSS should ideally dictate the size.
+        newWidth = gameBoard.width; // The attribute, not computed style
+        newHeight = gameBoard.height; // The attribute, not computed style
+    }
+    
+    // Calculate GRID_SIZE based on the smaller dimension and BASE_TILE_COUNT
+    // Ensure GRID_SIZE is at least 1 to prevent division by zero or invisible grid
+    GRID_SIZE = Math.max(1, Math.floor(Math.min(newWidth, newHeight) / BASE_TILE_COUNT));
+
+    TILE_COUNT_X = BASE_TILE_COUNT;
+    TILE_COUNT_Y = BASE_TILE_COUNT;
+    
+    // Set the canvas rendering dimensions to be a perfect multiple of GRID_SIZE
+    gameBoard.width = TILE_COUNT_X * GRID_SIZE;
+    gameBoard.height = TILE_COUNT_Y * GRID_SIZE;
+
+    // Update global constants with the *actual rendering dimensions*
+    CANVAS_WIDTH = gameBoard.width;
+    CANVAS_HEIGHT = gameBoard.height;
+
+    // The CSS will still control the visual scaling of this rendered canvas.
+    // e.g., style="width: 100%; height: auto;" or aspect-ratio.
+    // The game logic now operates on a consistent grid based on these calculated dimensions.
+}
+
+
+function initGame() { // Renamed from initGame to avoid conflict if any global initGame exists
+    updateCanvasDimensions(); // Calculate dimensions first
     scoreSnake = 0;
     scoreDisplaySnake.textContent = scoreSnake;
     snake = [];
-    // Initial snake position (center-ish)
+    
     const startX = Math.floor(TILE_COUNT_X / 2);
     const startY = Math.floor(TILE_COUNT_Y / 2);
     for (let i = 0; i < INITIAL_SNAKE_LENGTH; i++) {
         snake.push({ x: startX - i, y: startY });
     }
-    dx = 1; // Moving right initially
+    dx = 1;
     dy = 0;
     changingDirection = false;
     placeFood();
@@ -95,9 +153,17 @@ function initGame() {
 
 function resetAndStartGameSnake() {
     gameOverSectionSnake.style.display = 'none';
-    playerNameSectionSnake.style.display = 'block';
-    playerNameInputSnake.value = "";
     gameContentSnake.style.display = 'none';
+
+    if (currentPlayerNameSnake) {
+        playerNameSectionSnake.style.display = 'none';
+        gameContentSnake.style.display = 'block'; // Also ensure game content is shown
+        displayPlayerNameSnake.textContent = currentPlayerNameSnake;
+        initGame();
+    } else {
+        playerNameSectionSnake.style.display = 'block';
+        playerNameInputSnake.value = "";
+    }
 }
 
 function gameLoop() {

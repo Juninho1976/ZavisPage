@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Hoops!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="basketball.css">   <!-- Basketball specific styles -->
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Arcade Hoops!</h1>
+        </header>
+
+        <div id="player-name-section-bb">
+            <h2>Enter Your Name, Hoop Star!</h2>
+            <input type="text" id="player-name-input-bb" placeholder="Your Name">
+            <button id="start-game-button-bb">Start Shooting!</button>
+            <p id="name-error-bb" class="error-message"></p>
+        </div>
+
+        <div id="game-content-bb" style="display:none;">
+            <div id="game-info-bb">
+                <p>Player: <span id="display-player-name-bb"></span></p>
+                <p>Score: <span id="score-bb">0</span></p>
+                <p>Balls Left: <span id="balls-left-bb">3</span></p>
+            </div>
+
+            <canvas id="basketball-court" width="600" height="400"></canvas>
+            <p id="instructions-bb">Click or Press Spacebar to shoot! Time your shot to score.</p>
+            <button id="shoot-button-bb" style="display: block; margin: 10px auto; padding: 10px 20px; font-size: 1.2em;">SHOOT!</button>
+        </div>
+
+        <div id="game-over-section-bb" style="display:none;">
+            <h2>Game Over!</h2>
+            <p>Nice shooting, <span id="final-player-name-bb"></span>!</p>
+            <p>Your final score is: <span id="final-score-bb"></span></p>
+            <button id="play-again-button-bb">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list-bb">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="basketball.js"></script>
+</body>
+</html>
