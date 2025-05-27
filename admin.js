@@ -6,10 +6,12 @@ const adminMainContent = document.getElementById('admin-main-content');
 
 const mmHighScoresListAdmin = document.getElementById('mm-high-scores-list-admin');
 const csHighScoresListAdmin = document.getElementById('cs-high-scores-list-admin');
+const capitalsHighScoresListAdmin = document.getElementById('capitals-high-scores-list-admin'); // Added for capitals
 const commentsListAdmin = document.getElementById('comments-list-admin');
 
 const MULTIPLICATION_MADNESS_STORAGE_KEY = 'multiplicationMadnessHighScores';
 const CLASSIC_SNAKE_STORAGE_KEY = 'classicSnakeHighScores';
+const CAPITALS_QUIZ_STORAGE_KEY = 'capitalsQuizHighScores'; // Added for capitals
 const COMMENTS_STORAGE_KEY = 'gameComments';
 
 // Check if already authenticated in this session
@@ -37,6 +39,7 @@ function showAdminContent() {
 function loadAllHighScores() {
     loadHighScoresForGame(MULTIPLICATION_MADNESS_STORAGE_KEY, mmHighScoresListAdmin, "Multiplication Madness");
     loadHighScoresForGame(CLASSIC_SNAKE_STORAGE_KEY, csHighScoresListAdmin, "Classic Snake");
+    loadHighScoresForGame(CAPITALS_QUIZ_STORAGE_KEY, capitalsHighScoresListAdmin, "Capitals Quiz"); // Added for capitals
     loadCommentsAdmin();
 }
 

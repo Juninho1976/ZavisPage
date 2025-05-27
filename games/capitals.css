@@ -1,0 +1,164 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #e6e6fa; /* Lavender, a calm color for a quiz */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #fffacd; /* LemonChiffon */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #483d8b; /* DarkSlateBlue */
+}
+
+#player-name-section-capitals input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #9370db; /* MediumPurple */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section-capitals button,
+#game-over-section-capitals button,
+.button-link {
+    background-color: #9370db; /* MediumPurple */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+#player-name-section-capitals button:hover,
+#game-over-section-capitals button:hover,
+.button-link:hover {
+    background-color: #7b68ee; /* MediumSlateBlue */
+}
+
+#game-info-capitals {
+    display: flex;
+    justify-content: space-around;
+    background-color: #dda0dd; /* Plum */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fff0f5; /* LavenderBlush (light text on darker bg) */
+}
+
+#question-area-capitals {
+    background-color: #f0f8ff; /* AliceBlue */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#country-name-capitals {
+    font-size: 1.6em; /* Slightly smaller than multiplication question */
+    color: #000080; /* Navy */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#answer-options-capitals {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Could be 1fr for longer city names */
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#answer-options-capitals button {
+    background-color: #b0e0e6; /* PowderBlue */
+    color: #2f4f4f; /* DarkSlateGray */
+    padding: 15px;
+    border: 2px solid #add8e6; /* LightBlue */
+    border-radius: 8px;
+    font-size: 1.1em; /* Slightly smaller if city names are long */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    min-height: 60px; /* Ensure buttons have some height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#answer-options-capitals button:hover {
+    background-color: #afeeee; /* PaleTurquoise */
+    transform: translateY(-2px);
+}
+
+#answer-options-capitals button.correct {
+    background-color: #98fb98 !important; /* PaleGreen */
+    color: #006400 !important; /* DarkGreen */
+    border-color: #2e8b57 !important; /* SeaGreen */
+}
+
+#answer-options-capitals button.incorrect {
+    background-color: #ffb6c1 !important; /* LightPink */
+    color: #a52a2a !important; /* Brown */
+    border-color: #cd5c5c !important; /* IndianRed */
+}
+
+#answer-options-capitals button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#feedback-message-capitals {
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 20px;
+}
+
+#game-over-section-capitals h3 {
+    color: #6a5acd; /* SlateBlue */
+    margin-top: 25px;
+    border-bottom: 2px dashed #ba55d3; /* MediumOrchid */
+    padding-bottom: 5px;
+}
+
+#high-scores-list-capitals {
+    list-style-type: decimal;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 350px; /* Can be wider for city names */
+    margin: 15px auto;
+}
+
+#high-scores-list-capitals li {
+    background-color: #f8f8ff; /* GhostWhite */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #8a2be2; /* BlueViolet */
+    font-size: 1.05em;
+}
+
+#high-scores-list-capitals li strong {
+    color: #4b0082; /* Indigo */
+}
+
+.error-message {
+    color: #dc143c;
+    font-weight: bold;
+    margin-top: 8px;
+}

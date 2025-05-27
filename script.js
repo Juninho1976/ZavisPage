@@ -1,16 +1,41 @@
 const CORRECT_PASSWORD = "ZaviTDJS";
 let votes = {
-    multiplicationMadness: 0,
-    classicSnake: 0
+    multiplicationMadness: { up: 0, down: 0 },
+    classicSnake: { up: 0, down: 0 },
+    capitalsQuiz: { up: 0, down: 0 }
 };
+let userGameVotes = {}; // To track user's vote for each game { gameId: 'up'/'down'/null }
 let comments = [];
 
 // Load data from localStorage if available
 window.onload = function() {
-    if (localStorage.getItem('gameVotes')) {
-        votes = JSON.parse(localStorage.getItem('gameVotes'));
-        updateAllVoteCounts();
+    const storedVotes = localStorage.getItem('gameVotes');
+    if (storedVotes) {
+        const parsedVotes = JSON.parse(storedVotes);
+        // Ensure new structure compatibility
+        for (const gameId in votes) {
+            if (parsedVotes[gameId] !== undefined) {
+                if (typeof parsedVotes[gameId] === 'number') { // Old format
+                    // This is a rough migration, assumes old score was net positive for up, or split
+                    // For simplicity, we'll reset or try a basic conversion if needed.
+                    // Or, better, initialize new games with new structure.
+                    // For existing games, if old format, initialize to new.
+                    votes[gameId] = { up: parsedVotes[gameId] > 0 ? parsedVotes[gameId] : 0, down: 0 };
+                } else {
+                    votes[gameId] = parsedVotes[gameId];
+                }
+            }
+        }
     }
+
+    const storedUserGameVotes = localStorage.getItem('userGameVotes');
+    if (storedUserGameVotes) {
+        userGameVotes = JSON.parse(storedUserGameVotes);
+    }
+
+    updateAllVoteCounts();
+    updateVoteButtonStates(); // Visually update buttons based on past votes
+
     if (localStorage.getItem('gameComments')) {
         comments = JSON.parse(localStorage.getItem('gameComments'));
         displayComments();
@@ -39,26 +64,92 @@ function showMainContent() {
     document.getElementById('main-content').style.display = 'block';
 }
 
-function vote(gameId, voteType) {
-    if (voteType === 'up') {
-        votes[gameId]++;
-    } else if (voteType === 'down') {
-        votes[gameId]--;
+function vote(gameId, newVoteType) {
+    const currentVote = userGameVotes[gameId]; // 'up', 'down', or undefined
+
+    // Initialize game in votes if not present (e.g. new game added)
+    if (!votes[gameId]) {
+        votes[gameId] = { up: 0, down: 0 };
     }
+
+    // If user is casting the same vote again, retract it
+    if (currentVote === newVoteType) {
+        if (newVoteType === 'up') {
+            votes[gameId].up--;
+        } else {
+            votes[gameId].down--;
+        }
+        userGameVotes[gameId] = null; // Vote retracted
+    } else {
+        // If user had a previous different vote, retract that first
+        if (currentVote === 'up') {
+            votes[gameId].up--;
+        } else if (currentVote === 'down') {
+            votes[gameId].down--;
+        }
+
+        // Cast the new vote
+        if (newVoteType === 'up') {
+            votes[gameId].up++;
+        } else {
+            votes[gameId].down++;
+        }
+        userGameVotes[gameId] = newVoteType; // Record new vote
+    }
+
     updateVoteCount(gameId);
+    updateVoteButtonStatesForGame(gameId);
     localStorage.setItem('gameVotes', JSON.stringify(votes));
+    localStorage.setItem('userGameVotes', JSON.stringify(userGameVotes));
 }
 
+
 function updateVoteCount(gameId) {
-    const votesElement = document.getElementById(`votes-${gameId}`);
-    if (votesElement) {
-        votesElement.textContent = votes[gameId];
+    const upVotesElement = document.getElementById(`up-votes-${gameId}`);
+    const downVotesElement = document.getElementById(`down-votes-${gameId}`);
+    
+    if (votes[gameId] && upVotesElement && downVotesElement) {
+        upVotesElement.textContent = votes[gameId].up;
+        downVotesElement.textContent = votes[gameId].down;
+    } else if (upVotesElement && downVotesElement) { // Game might not be in votes yet if loaded from old LS
+        upVotesElement.textContent = "0";
+        downVotesElement.textContent = "0";
     }
 }
 
 function updateAllVoteCounts() {
     for (const gameId in votes) {
-        updateVoteCount(gameId);
+        // Ensure the elements exist before trying to update
+        if (document.getElementById(`up-votes-${gameId}`)) {
+            updateVoteCount(gameId);
+        }
+    }
+}
+
+function updateVoteButtonStates() {
+    for (const gameId in userGameVotes) {
+        updateVoteButtonStatesForGame(gameId);
+    }
+}
+
+function updateVoteButtonStatesForGame(gameId) {
+    const gameItem = document.querySelector(`.game-item[data-game-id="${gameId}"]`);
+    if (!gameItem) return;
+
+    const upvoteButton = gameItem.querySelector('.upvote');
+    const downvoteButton = gameItem.querySelector('.downvote');
+
+    if (!upvoteButton || !downvoteButton) return;
+
+    // Reset styles
+    upvoteButton.classList.remove('voted');
+    downvoteButton.classList.remove('voted');
+
+    const currentVote = userGameVotes[gameId];
+    if (currentVote === 'up') {
+        upvoteButton.classList.add('voted');
+    } else if (currentVote === 'down') {
+        downvoteButton.classList.add('voted');
     }
 }
 

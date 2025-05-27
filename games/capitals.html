@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitals Quiz!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Main styles -->
+    <link rel="stylesheet" href="capitals.css">   <!-- Capitals specific styles -->
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>World Capitals Quiz!</h1>
+        </header>
+
+        <div id="player-name-section-capitals">
+            <h2>Enter Your Name, Geography Genius!</h2>
+            <input type="text" id="player-name-input-capitals" placeholder="Your Name">
+            <button id="start-game-button-capitals">Start Quiz</button>
+            <p id="name-error-capitals" class="error-message"></p>
+        </div>
+
+        <div id="game-content-capitals" style="display:none;">
+            <div id="game-info-capitals">
+                <p>Player: <span id="display-player-name-capitals"></span></p>
+                <p>Score: <span id="score-capitals">0</span></p>
+                <p>Round: <span id="round-number-capitals">1</span>/5</p>
+                <p>Time Left: <span id="timer-capitals">10</span>s</p> <!-- More time for thinking -->
+            </div>
+
+            <div id="question-area-capitals">
+                <p id="country-name-capitals"></p>
+                <div id="answer-options-capitals">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+                <p id="feedback-message-capitals"></p>
+            </div>
+        </div>
+
+        <div id="game-over-section-capitals" style="display:none;">
+            <h2>Quiz Over!</h2>
+            <p>Great effort, <span id="final-player-name-capitals"></span>!</p>
+            <p>Your final score is: <span id="final-score-capitals"></span></p>
+            <button id="play-again-button-capitals">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list-capitals">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="capitals.js"></script>
+</body>
+</html>

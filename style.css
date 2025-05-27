@@ -127,6 +127,11 @@ main {
     transform: scale(1.1);
 }
 
+.voting button.voted {
+    border: 2px solid #000080; /* Navy border to indicate voted */
+    box-shadow: 0 0 5px #000080;
+}
+
 .upvote {
     background-color: #90ee90; /* LightGreen */
 }
@@ -135,10 +140,18 @@ main {
     background-color: #f08080; /* LightCoral */
 }
 
-.votes {
+.up-votes, .down-votes {
     font-weight: bold;
-    font-size: 1.2em;
-    color: #483d8b; /* DarkSlateBlue */
+    font-size: 1.1em;
+    margin: 0 5px; /* Space around the counts */
+}
+
+.up-votes {
+    color: #228b22; /* ForestGreen */
+}
+
+.down-votes {
+    color: #dc143c; /* Crimson */
 }
 
 .play-game-link {
