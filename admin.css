@@ -1,0 +1,97 @@
+/* Inherits some styles from style.css for consistency */
+
+body {
+    background-color: #f5f5dc; /* Beige, distinct from main arcade and games */
+}
+
+#admin-password-protection {
+    background-color: #d2b48c; /* Tan */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-top: 50px; /* Give some space from top */
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+#admin-password-protection h2 {
+    color: #5f4c3b; /* Darker Tan */
+}
+
+#admin-password-protection input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #8b4513; /* SaddleBrown */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 200px;
+}
+
+#admin-password-protection button {
+    background-color: #8b4513; /* SaddleBrown */
+    color: white;
+}
+
+#admin-password-protection button:hover {
+    background-color: #5f4c3b;
+}
+
+#admin-main-content header {
+    background-color: #a0522d; /* Sienna */
+    color: white;
+    width: 80%;
+    max-width: 1000px;
+}
+
+#admin-main-content main {
+    width: 80%;
+    max-width: 1000px;
+    background-color: #fff8dc; /* Cornsilk */
+}
+
+#admin-main-content h2 {
+    color: #b8860b; /* DarkGoldenRod */
+    border-bottom: 2px dashed #f4a460; /* SandyBrown */
+}
+
+#admin-main-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#admin-main-content li {
+    background-color: #faf0e6; /* Linen */
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 5px solid #cd853f; /* Peru */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#admin-main-content li .score-details {
+    flex-grow: 1;
+}
+
+#admin-main-content li .delete-score-button {
+    background-color: #ff6347; /* Tomato */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 15px;
+}
+
+#admin-main-content li .delete-score-button:hover {
+    background-color: #e55337; /* Darker Tomato */
+}
+
+#admin-main-content footer {
+    background-color: #a0522d; /* Sienna */
+    width: 80%;
+    max-width: 1000px;
+}

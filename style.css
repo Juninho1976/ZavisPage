@@ -1,0 +1,227 @@
+body {
+    font-family: 'Comic Sans MS', 'Chalkduster', 'Kristen ITC', cursive;
+    background-color: #f0f8ff; /* AliceBlue */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#password-protection {
+    background-color: #ffdead; /* NavajoWhite */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+#password-protection h2 {
+    color: #8b4513; /* SaddleBrown */
+    font-size: 1.8em;
+}
+
+#password-protection input[type="password"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #8b4513;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 200px;
+}
+
+#password-protection button {
+    background-color: #32cd32; /* LimeGreen */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#password-protection button:hover {
+    background-color: #228b22; /* ForestGreen */
+}
+
+.error-message {
+    color: #ff4500; /* OrangeRed */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+header {
+    background-color: #4682b4; /* SteelBlue */
+    color: white;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px #2a4f6d;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+main {
+    width: 80%;
+    max-width: 900px;
+    background-color: #fffafa; /* Snow */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#games-list h2, #comments-ideas h2 {
+    color: #ff6347; /* Tomato */
+    border-bottom: 3px dashed #ffdab9; /* PeachPuff */
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.game-item {
+    background-color: #f5f5dc; /* Beige */
+    border: 2px solid #dda0dd; /* Plum */
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.game-item h3 {
+    color: #800080; /* Purple */
+    margin-top: 0;
+}
+
+.voting {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.voting button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: transform 0.2s ease;
+}
+
+.voting button:hover {
+    transform: scale(1.1);
+}
+
+.upvote {
+    background-color: #90ee90; /* LightGreen */
+}
+
+.downvote {
+    background-color: #f08080; /* LightCoral */
+}
+
+.votes {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #483d8b; /* DarkSlateBlue */
+}
+
+.play-game-link {
+    display: inline-block;
+    background-color: #1e90ff; /* DodgerBlue */
+    color: white;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.play-game-link:hover {
+    background-color: #104e8b; /* Darker DodgerBlue */
+}
+
+#comments-ideas input[type="text"],
+#comments-ideas textarea {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #add8e6; /* LightBlue */
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+}
+
+#comments-ideas textarea {
+    height: 100px;
+}
+
+
+#comments-ideas button {
+    background-color: #ffa500; /* Orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#comments-ideas button:hover {
+    background-color: #cc8400; /* Darker Orange */
+}
+
+#comments-display {
+    margin-top: 20px;
+    text-align: left;
+}
+
+#comments-display h4 {
+    color: #2e8b57; /* SeaGreen */
+}
+
+#comments-display ul {
+    list-style-type: '🎮 '; /* Funky bullet point */
+    padding-left: 20px;
+}
+
+#comments-display li {
+    background-color: #e6e6fa; /* Lavender */
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 5px solid #9370db; /* MediumPurple */
+}
+
+footer {
+    background-color: #4682b4; /* SteelBlue */
+    color: white;
+    padding: 15px;
+    border-radius: 0 0 10px 10px;
+    width: 80%;
+    max-width: 900px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}

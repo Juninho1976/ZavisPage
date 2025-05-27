@@ -1,0 +1,157 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #e0ffff; /* LightCyan, a bit different from main page */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #fff0f5; /* LavenderBlush */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 700px;
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #ff1493; /* DeepPink */
+}
+
+#player-name-section input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #ff69b4; /* HotPink */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section button, #game-over-section button, .button-link {
+    background-color: #ff69b4; /* HotPink */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* For <a> tags styled as buttons */
+    display: inline-block; /* For <a> tags */
+    margin: 5px;
+}
+
+#player-name-section button:hover, #game-over-section button:hover, .button-link:hover {
+    background-color: #c71585; /* MediumVioletRed */
+}
+
+#game-info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffe4e1; /* MistyRose */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #800080; /* Purple */
+}
+
+#question-area {
+    background-color: #fafad2; /* LightGoldenrodYellow */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#question-text {
+    font-size: 1.8em;
+    color: #4b0082; /* Indigo */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#answer-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+#answer-options button {
+    background-color: #87cefa; /* LightSkyBlue */
+    color: #000080; /* Navy */
+    padding: 15px;
+    border: 2px solid #4682b4; /* SteelBlue */
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#answer-options button:hover {
+    background-color: #add8e6; /* LightBlue */
+    transform: translateY(-2px);
+}
+
+#answer-options button.correct {
+    background-color: #32cd32 !important; /* LimeGreen */
+    color: white !important;
+    border-color: #228b22 !important; /* ForestGreen */
+}
+
+#answer-options button.incorrect {
+    background-color: #ff6347 !important; /* Tomato */
+    color: white !important;
+    border-color: #dc143c !important; /* Crimson */
+}
+
+#answer-options button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+#feedback-message {
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 20px; /* Reserve space */
+}
+
+#game-over-section h3 {
+    color: #20b2aa; /* LightSeaGreen */
+    margin-top: 25px;
+    border-bottom: 2px dashed #afeeee; /* PaleTurquoise */
+    padding-bottom: 5px;
+}
+
+#high-scores-list {
+    list-style-type: decimal;
+    padding-left: 40px; /* Indent numbers */
+    text-align: left;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+#high-scores-list li {
+    background-color: #f0fff0; /* Honeydew */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #3cb371; /* MediumSeaGreen */
+    font-size: 1.05em;
+}
+
+#high-scores-list li strong {
+    color: #556b2f; /* DarkOliveGreen */
+}
+
+.error-message {
+    color: #dc143c; /* Crimson */
+    font-weight: bold;
+    margin-top: 8px;
+}

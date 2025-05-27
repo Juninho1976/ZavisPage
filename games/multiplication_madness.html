@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Madness!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Link to main styles for consistency -->
+    <link rel="stylesheet" href="multiplication_madness.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Multiplication Madness!</h1>
+        </header>
+
+        <div id="player-name-section">
+            <h2>Enter Your Name, Math Whiz!</h2>
+            <input type="text" id="player-name-input" placeholder="Your Name">
+            <button id="start-game-button">Start Game</button>
+            <p id="name-error" class="error-message"></p>
+        </div>
+
+        <div id="game-content" style="display:none;">
+            <div id="game-info">
+                <p>Player: <span id="display-player-name"></span></p>
+                <p>Score: <span id="score">0</span></p>
+                <p>Question: <span id="question-number">1</span>/10</p>
+                <p>Time Left: <span id="timer">6</span>s</p>
+            </div>
+
+            <div id="question-area">
+                <p id="question-text"></p>
+                <div id="answer-options">
+                    <!-- Answer buttons will be generated here -->
+                </div>
+                <p id="feedback-message"></p>
+            </div>
+        </div>
+
+        <div id="game-over-section" style="display:none;">
+            <h2>Game Over!</h2>
+            <p>Well done, <span id="final-player-name"></span>!</p>
+            <p>Your final score is: <span id="final-score"></span></p>
+            <button id="play-again-button">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="multiplication_madness.js"></script>
+</body>
+</html>

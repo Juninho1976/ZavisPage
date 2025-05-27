@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zavi's Game Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="password-protection">
+        <h2>Enter Password to Access Zavi's Game Arcade</h2>
+        <input type="password" id="password-input" placeholder="Password">
+        <button onclick="checkPassword()">Enter</button>
+        <p id="password-error" class="error-message"></p>
+    </div>
+
+    <div id="main-content" style="display:none;">
+        <header>
+            <h1>Welcome to Zavi's Awesome Game Arcade!</h1>
+            <p>Get ready for some fun!</p>
+        </header>
+
+        <main>
+            <section id="games-list">
+                <h2>Game Zone</h2>
+                <div class="game-item" data-game-id="multiplicationMadness">
+                    <h3>Multiplication Madness!</h3>
+                    <p>Test your times tables skills against the clock! How many can you get right?</p>
+                    <a href="games/multiplication_madness.html" class="play-game-link">Play Game!</a>
+                    <div class="voting">
+                        <button class="upvote" onclick="vote('multiplicationMadness', 'up')">👍 Upvote</button>
+                        <span class="votes" id="votes-multiplicationMadness">0</span>
+                        <button class="downvote" onclick="vote('multiplicationMadness', 'down')">👎 Downvote</button>
+                    </div>
+                </div>
+                <div class="game-item" data-game-id="classicSnake">
+                    <h3>Classic Snake</h3>
+                    <p>The timeless Nokia-style snake game. Eat, grow, and don't hit the walls (or yourself!).</p>
+                    <a href="games/snake.html" class="play-game-link">Play Game!</a>
+                    <div class="voting">
+                        <button class="upvote" onclick="vote('classicSnake', 'up')">👍 Upvote</button>
+                        <span class="votes" id="votes-classicSnake">0</span>
+                        <button class="downvote" onclick="vote('classicSnake', 'down')">👎 Downvote</button>
+                    </div>
+                </div>
+                <!-- More games can be added here -->
+            </section>
+
+            <section id="comments-ideas">
+                <h2>Ideas & Feedback Corner</h2>
+                <input type="text" id="commenter-name-input" placeholder="Your Name">
+                <textarea id="comment-input" placeholder="Got an idea for a new game or some feedback? Let us know!"></textarea>
+                <button onclick="submitComment()">Submit Idea</button>
+                <div id="comments-display">
+                    <h4>Submitted Ideas:</h4>
+                    <ul>
+                        <!-- Comments will be displayed here -->
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Zavi's Game Arcade. All rights reserved (by Zavi!).</p>
+            <p style="margin-top: 5px;"><a href="admin.html" style="color: #fff; font-size: 0.8em;">Admin Panel</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

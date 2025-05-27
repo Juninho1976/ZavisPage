@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classic Snake!</title>
+    <link rel="stylesheet" href="../style.css"> <!-- Link to main styles -->
+    <link rel="stylesheet" href="snake.css">    <!-- Link to snake specific styles -->
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Classic Snake Game</h1>
+        </header>
+
+        <div id="player-name-section-snake">
+            <h2>Enter Your Name, Snake Charmer!</h2>
+            <input type="text" id="player-name-input-snake" placeholder="Your Name">
+            <button id="start-game-button-snake">Start Game</button>
+            <p id="name-error-snake" class="error-message"></p>
+        </div>
+
+        <div id="game-content-snake" style="display:none;">
+            <div id="game-info-snake">
+                <p>Player: <span id="display-player-name-snake"></span></p>
+                <p>Score: <span id="score-snake">0</span></p>
+            </div>
+
+            <canvas id="game-board" width="400" height="400"></canvas>
+            <p id="instructions-snake">Use Arrow Keys to move the snake. Eat the food to grow!</p>
+        </div>
+
+        <div id="game-over-section-snake" style="display:none;">
+            <h2>Game Over!</h2>
+            <p>Good try, <span id="final-player-name-snake"></span>!</p>
+            <p>Your final score is: <span id="final-score-snake"></span></p>
+            <button id="play-again-button-snake">Play Again</button>
+            <a href="../index.html" class="button-link">Back to Arcade</a>
+            <h3>High Scores</h3>
+            <ol id="high-scores-list-snake">
+                <!-- High scores will be listed here -->
+            </ol>
+        </div>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>

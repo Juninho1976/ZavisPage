@@ -1,0 +1,113 @@
+/* Inherits some styles from ../style.css for consistency */
+
+body {
+    background-color: #90ee90; /* LightGreen, fitting for snake */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+#game-container {
+    background-color: #f5f5f5; /* WhiteSmoke */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px; /* Adjusted for canvas size */
+    text-align: center;
+}
+
+#game-container h1, #game-container h2 {
+    color: #006400; /* DarkGreen */
+}
+
+#player-name-section-snake input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #228b22; /* ForestGreen */
+    border-radius: 8px;
+    font-size: 1em;
+    width: 250px;
+}
+
+#player-name-section-snake button,
+#game-over-section-snake button,
+.button-link { /* Reusing .button-link style from main css if needed, or define here */
+    background-color: #32cd32; /* LimeGreen */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+#player-name-section-snake button:hover,
+#game-over-section-snake button:hover,
+.button-link:hover {
+    background-color: #228b22; /* ForestGreen */
+}
+
+#game-info-snake {
+    display: flex;
+    justify-content: space-around;
+    background-color: #adff2f; /* GreenYellow */
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #556b2f; /* DarkOliveGreen */
+}
+
+#game-board {
+    border: 5px solid #006400; /* DarkGreen */
+    background-color: #000; /* Black game board */
+    margin: 0 auto 15px auto; /* Center the canvas */
+    display: block;
+}
+
+#instructions-snake {
+    font-size: 0.9em;
+    color: #556b2f;
+    margin-bottom: 15px;
+}
+
+#game-over-section-snake h3 {
+    color: #2e8b57; /* SeaGreen */
+    margin-top: 25px;
+    border-bottom: 2px dashed #98fb98; /* PaleGreen */
+    padding-bottom: 5px;
+}
+
+#high-scores-list-snake {
+    list-style-type: decimal;
+    padding-left: 40px;
+    text-align: left;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+#high-scores-list-snake li {
+    background-color: #f0fff0; /* Honeydew */
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    border-left: 4px solid #3cb371; /* MediumSeaGreen */
+    font-size: 1.05em;
+}
+
+#high-scores-list-snake li strong {
+    color: #006400; /* DarkGreen */
+}
+
+.error-message { /* Shared with multiplication game, defined in main style.css */
+    color: #dc143c; /* Crimson */
+    font-weight: bold;
+    margin-top: 8px;
+}

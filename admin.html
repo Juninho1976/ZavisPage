@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Zavi's Arcade</title>
+    <link rel="stylesheet" href="style.css"> <!-- Main styles for consistency -->
+    <link rel="stylesheet" href="admin.css">   <!-- Admin specific styles -->
+</head>
+<body>
+    <div id="admin-password-protection">
+        <h2>Admin Area Access</h2>
+        <input type="password" id="admin-password-input" placeholder="Admin Password">
+        <button onclick="checkAdminPassword()">Login</button>
+        <p id="admin-password-error" class="error-message"></p>
+        <p><a href="index.html" class="button-link" style="background-color: #777; margin-top:15px;">Back to Arcade</a></p>
+    </div>
+
+    <div id="admin-main-content" style="display:none;">
+        <header>
+            <h1>Arcade Admin Panel</h1>
+            <p>Manage High Scores</p>
+            <p><a href="index.html" class="button-link" style="background-color: #777; font-size: 0.8em;">Back to Arcade</a></p>
+        </header>
+
+        <main>
+            <section id="multiplication-madness-scores">
+                <h2>Multiplication Madness - High Scores</h2>
+                <ul id="mm-high-scores-list-admin">
+                    <!-- Scores will be loaded here by admin.js -->
+                </ul>
+            </section>
+
+            <section id="classic-snake-scores">
+                <h2>Classic Snake - High Scores</h2>
+                <ul id="cs-high-scores-list-admin">
+                    <!-- Scores will be loaded here by admin.js -->
+                </ul>
+            </section>
+
+            <section id="manage-comments">
+                <h2>Manage Comments/Ideas</h2>
+                <ul id="comments-list-admin">
+                    <!-- Comments will be loaded here by admin.js -->
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Zavi's Game Arcade - Admin</p>
+        </footer>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
